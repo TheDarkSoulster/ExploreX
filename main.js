@@ -11,7 +11,12 @@
 setInterval(() => {
     const time = document.querySelector("#time");
     let date = new Date();
-    let hours = date.getHours().toString().padStart(2, '0');
+    let hours = date.getHours();
     let minutes = date.getMinutes().toString().padStart(2, '0');
-    time.textContent = hours + ":" + minutes;
+    let period = hours >= 12 ? "PM" : "AM";
+    
+    // Convert hours to 12-hour format
+    hours = (hours % 12) || 12;
+    
+    time.textContent = hours + ":" + minutes + " " + period;
 });
