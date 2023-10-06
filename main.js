@@ -17,5 +17,5 @@ setInterval(() => {
     // Convert hours to 12-hour format
     hours = (hours % 12) || 12;
     
-    time.textContent = hours + ":" + minutes + " " + period;
+    time.textContent = hours + ":" + minutes;
 });
