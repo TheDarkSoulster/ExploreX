@@ -5,5 +5,5 @@ setInterval(() => {
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
     let milliseconds = date.getMilliseconds();
-    time.textContent = hours + ":" + minutes + ":" + seconds;
+    time.textContent = hours + ":" + minutes;
 });
