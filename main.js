@@ -8,18 +8,10 @@
 //    time.textContent = hours + ":" + minutes;
 //});
 
-const time = document.querySelector("#time"); = {
-  format: (date: Date): string => {
-    const hours: string = T.formatHours(date.getHours()),
-          minutes: string = date.getMinutes(),
-          seconds: string = date.getSeconds();
-    
-    return `${hours}:${T.formatSegment(minutes)}`;
-  },
-  formatHours: (hours: number): string => {
-    return hours % 12 === 0 ? 12 : hours % 12;
-  },
-  formatSegment: (segment: number): string => {
-    return segment < 10 ? `0${segment}` : segment;
-  }
-}
+setInterval(() => {
+    const time = document.querySelector("#time");
+    let date = new Date();
+    let hours = date.getHours().toString().padStart(2, '0');
+    let minutes = date.getMinutes().toString().padStart(2, '0');
+    time.textContent = hours + ":" + minutes;
+});
