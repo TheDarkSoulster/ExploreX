@@ -13,7 +13,7 @@ setInterval(() => {
     let date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes().toString().padStart(2, '0');
-    let period = hours >= 12 ? "PM" : "AM";
+    let period = hours >= 12 ? "ᴾᴹ" : "ᴬᴹ";
     
     // Convert hours to 12-hour format
     hours = (hours % 12) || 12;
