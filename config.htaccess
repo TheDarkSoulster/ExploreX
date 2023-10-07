@@ -6,7 +6,7 @@
   ExpiresActive on
 
 # Your document html
-  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType index/html "access plus 0 seconds"
 
 # Media: images, video, audio
   ExpiresByType audio/ogg "access plus 1 month"
@@ -18,6 +18,6 @@
   ExpiresByType video/webm "access plus 1 month"
 
 # CSS and JavaScript
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType main/javascript "access plus 1 year"
+  ExpiresByType styles/css "access plus 1 year"
 </IfModule>
