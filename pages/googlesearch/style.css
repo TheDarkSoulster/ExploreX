@@ -112,7 +112,7 @@ button, a, input {
 }
 
 #logo {
-  width: 40%; 
+  width: 50%; 
 }
 
 #search-container {
@@ -217,20 +217,32 @@ button, a, input {
 }
 
 #apps-container > a:nth-child(2) {  
-  color: rgb(255, 0, 0);
+  color: rgb(39, 162, 227);
   border-top-right-radius: 0.5rem;
 }
 
 #apps-container > a:nth-child(3) {  
-  color: rgb(28, 204, 91);
+  color: rgb(255, 255, 255);
 }
 
 #apps-container > a:nth-child(4) {  
-  color: rgb(28, 147, 228);
+  color: rgb(255, 220, 79);
 }
 
 #apps-container > a:nth-child(5) {  
-  color: rgb(242, 85, 90);
+  color: rgb(8, 91, 211);
+}
+
+#apps-container > a:nth-child(6) {  
+  color: rgb(236, 16, 21);
+}
+
+#apps-container > a:nth-child(7) {  
+  color: rgb(134, 59, 141);
+}
+
+#apps-container > a:nth-child(8) {
+    color: rgb(234, 102, 42);
 }
 
 #apps-container > a:nth-child(7) {  
@@ -238,82 +250,13 @@ button, a, input {
 }
 
 #apps-container > a:last-child {
-  color: rgb(15, 118, 14);
+  color: rgb(234, 102, 42);
   border-bottom-right-radius: 0.5rem; 
 }
 
-#discover-container {
-  width: 100%;
-}
-
-#discover-toggles {
-  width: 80%;
-  display: flex; 
-  background-color: rgb(var(--theme-medium));
-  margin: auto;
-  border-radius: 0.5rem;
-}
-
-#discover-toggles > button {
-  flex-grow: 1;
-  background-color: transparent;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  outline: none;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-#discover-toggles > button:first-child {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  background-color: rgb(255 255 255 / 8%);
-}
-
-#discover-toggles > button:last-child {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
-#discover-feed {
-  margin-top: 0.5rem;
-}
-
-.discover-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  text-decoration: none;
-}
-
-.discover-card > img {
-  width: 100%;
-  aspect-ratio: 1.6 / 1;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-
-.discover-card > .discover-card-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  background-color: rgb(var(--theme-medium));
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
-
-.discover-card > .discover-card-info > .title {
-  font-size: 0.8rem;
-}
-
-.discover-card > .discover-card-info > .desc {
-  font-size: 0.7rem;
-  color: rgb(255 255 255 / 50%);
+#xtra-text {
+    font-style: italic;
+    color: #7a748f;
 }
 
 @media(max-width: 500px) {
