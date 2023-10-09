@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess My Number!</title>
+</head>
+
+<body>
+    <header>
+        <h1>Random Name Generator</h1>
+        <div class="number">?</div>
+    </header>
+    <main>
+        <section class="left">
+            <p class="guess"></p>
+            <form action="#" class="chooser">
+                <label for="lang">Class:</label>
+                <select name="Class" id="class">
+                    <option onsubmit="return false" value="icse">Icse 8A</option>
+                    <option onsubmit="return false" value="cbsea">Cbse 8A</option>
+                    <option onsubmit="return false" value="cbseb">Cbse 8B</option>
+                </select>
+                <button class="btn select-btn" type="button" onclick="Selector()">Submit</button>
+            </form>
+        </section>
+        <section class="right">
+            <button class="btn again">Again!</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body></html>

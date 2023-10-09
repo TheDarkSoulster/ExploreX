@@ -1,0 +1,63 @@
+body {
+    background-color: #0b0b0b;
+    font-family: "Rubik", sans-serif;
+    color: #7e7e7e
+}
+
+h1 {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    margin: 2rem;
+    padding: 1rem;
+    top: 20%;
+    font-size: 3rem;
+}
+
+h3 {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    margin: 2rem;
+    padding: 1rem;
+    top: 15%;
+    font-size: 1.5rem;
+}
+
+img {
+    height: 20%;
+    width: auto;
+    position: absolute;
+    top: 20%;
+    left: 75%;
+}
+
+.btn {
+    position: relative;
+    top: 20%;
+    left: 35%;
+    width: 30%;
+    border: -1rem;
+    border-top: 1rem;
+    border-left: 6rem;
+    background-color: #eee;
+    color: #222;
+    font-size: 2rem;
+    font-family: inherit;
+    padding: 2rem 3rem;
+    cursor: pointer;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+.btn:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    position: relative;
+    top: 19.5%;
+    left: 35%;
+}
