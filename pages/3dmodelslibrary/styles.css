@@ -6,9 +6,10 @@ body {
     padding: 0;
 }
 
+/* Search bar styles */
 .search-bar {
     background-color: #333;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 20px 0;
 }
@@ -19,18 +20,19 @@ body {
     border: none;
     border-radius: 5px;
     margin-right: 10px;
-    color: white;
+    color: #ffffff; /* Text color */
 }
 
 .search-bar button {
     padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
+    background-color: #252830; /* Button background color */
+    color: #ffffff; /* Button text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
+/* Model card styles */
 .model-list {
     display: flex;
     flex-wrap: wrap;
@@ -46,6 +48,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
     width: 300px;
+    color: #ffffff; /* Text color inside model cards */
 }
 
 .model-card:hover {
@@ -56,15 +59,17 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #252830; /* Text color */
 }
 
 .model-description {
     margin-bottom: 10px;
+    color: #252830; /* Text color */
 }
 
 .view-model-button {
-    background-color: #4caf50;
-    color: white;
+    background-color: #252830; /* Button background color */
+    color: #ffffff; /* Button text color */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -73,5 +78,5 @@ body {
 }
 
 .view-model-button:hover {
-    background-color: #45a049;
+    background-color: #1e1e1e; /* Hover background color */
 }
