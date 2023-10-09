@@ -1,0 +1,167 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #131417;
+  min-height: 100vh;
+}
+
+.search-bar {
+  background-color: #282c35;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#searchInput {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+#searchButton {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.model-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.model-card {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  position: relative;
+}
+
+.model-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.model-description {
+  font-size: 16px;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-model-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin-top: auto; /* Push the button to the bottom */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.model-card:hover .view-model-button {
+  opacity: 1;
+}
+
+.model-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.model-description {
+  font-size: 16px;
+  color: #555;
+}
+
+.even {
+  background-color: #f2f2f2;
+}
+
+.odd {
+  background-color: #ffffff;
+}
+
+.view-model-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.model-card:hover .view-model-button {
+  opacity: 1;
+}
+
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #4caf50, #2196f3);
+  animation: fade-out 1s ease forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.search-bar {
+    background-color: #282c35;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 100px 5px 5px 100px; /* Rounded completely on left (100px) and 5px to 10px rounded on the right */
+}
+
+#searchInput {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
