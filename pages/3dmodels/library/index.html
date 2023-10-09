@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorex 3D Models</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>3D Model Viewer - Explorex</title>
+  <link rel="stylesheet" href="./style.css">
+
 </head>
-
 <body>
-    <div class="search-bar">
-        <input type="search" id="searchInput" placeholder="Search 3D Models...">
-        <button onclick="searchModels()">Search</button>
-    </div>
-    <div class="model-list" id="modelList"></div>
 
-    <script src="./script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="search-bar">
+  <input id="searchInput" type="text" placeholder="Search...">
+  <button id="searchButton">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+<div class="model-list" id="modelList"></div>
+
+  <script  src="./script.js"></script>
+
 </body>
-
 </html>
