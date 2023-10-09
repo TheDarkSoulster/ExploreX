@@ -44,6 +44,8 @@ body {
 .model-description {
     color: #555;
     text-align: center;
+    max-height: 70px; /* Set maximum height for the description */
+    overflow: hidden;
 }
 
 .model-card button {
