@@ -51,6 +51,11 @@ function filterAndPaginateModels() {
     });
 }
 
+        displayModels(filteredModels, currentPage);
+        renderPaginationControls(totalPages);
+    });
+}
+
 function renderPaginationControls(totalPages) {
     const paginationControls = document.createElement('div');
     paginationControls.className = 'pagination-controls';
