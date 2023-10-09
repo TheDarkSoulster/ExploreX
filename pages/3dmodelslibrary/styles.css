@@ -3,16 +3,19 @@ body {
 }
 
 .search-bar {
-    margin: 20px;
+    text-align: center;
+    margin: 20px 0;
 }
 
-.models-list {
+.model-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .model-card {
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
+    cursor: pointer;
 }
