@@ -18,16 +18,20 @@ function searchModels() {
                 title.textContent = model.name;
                 modelCard.appendChild(title);
 
-                // Create description element
+                // Create description element (limited to 150 characters with "..." if exceeded)
                 const description = document.createElement('div');
                 description.className = 'model-description';
-                description.textContent = model.description || 'No description available';
+                description.textContent = model.description ? (model.description.length > 150 ? model.description.slice(0, 150) + '...' : model.description) : 'No description available';
                 modelCard.appendChild(description);
 
-                // Embed Sketchfab 3D viewer link on card click
-                modelCard.addEventListener('click', () => {
+                // Add "View Model" button
+                const viewModelButton = document.createElement('button');
+                viewModelButton.textContent = 'View Model';
+                viewModelButton.className = 'view-model-button';
+                viewModelButton.addEventListener('click', () => {
                     window.open(`https://sketchfab.com/models/${model.uid}/embed`, '_blank');
                 });
+                modelCard.appendChild(viewModelButton);
 
                 // Add the model card to the model list
                 modelList.appendChild(modelCard);
