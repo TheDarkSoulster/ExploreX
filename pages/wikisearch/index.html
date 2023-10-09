@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Wikipedia with ExploreX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div id="main-wrapper" class="fancy-scrollbar">
+        <div id="main">
+            <div id="nav">
+                <a class="nav-logo" href="#">
+                    <img src="https://assets.codepen.io/1468070/Wiki+Logo+-+White.png" alt="" />
+                </a>
+            </div>
+            <div id="header">
+                <div class="header-content">
+                    <div class="article-count-wrapper header-section">
+                        <div class="article-count">
+                            <div class="value-wrapper">
+                                <i class="fa-solid fa-circle fa-3x"></i>
+                                <h2 class="value">6,724,506</h2>
+                            </div>
+                            <h3 class="label">Articles</h3>
+                        </div>
+                    </div>
+                    <div class="header-stats-wrapper header-section">
+                        <div class="users-stat header-stat">
+                            <h3>
+                                <span class="body">
+                                    <i class="fa-solid fa-earth-americas"></i>
+                                    <span class="value"> 4.5B</span>
+                                </span>
+                                <span class="label">Users</span>
+                            </h3>
+                        </div>
+                        <div class="editors-stat header-stat">
+                            <h3>
+                                <span class="body">
+                                    <i class="fa-solid fa-user-ninja"></i>
+                                    <span class="value">1,429</span>
+                                </span>
+                                <span class="label">Editors</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="header-menu header-section">
+                        <div id="searchbar-container" class="searchbar-container">
+                            <input id="searchbar" type="text" placeholder="Search all of Wikipedia with Explorex..." />
+                            <div id="clear-button" class="clear-button">&#x2715;</div>
+                        </div>
+                        <button type="button" id="searchbutton">
+                            <i class="fa-regular fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div class="featured articles-section">
+                    <h2 class="title"><i class="fa-solid fa-bolt"></i><span class="value">Featured</span></h2>
+                    <div class="featured-articles articles">
+                        <a class="featured-article article" href="#">
+                            <img src="https://images.unsplash.com/photo-1567523829547-c4871caffea0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3RyZWV0Y2FyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
+                            <div class="article-info">
+                                <h3>Streetcar acquires sentience overnight</h3>
+                                <p>Onlookers are saying things like: "We're not sure how this happened, but it seems nice enough.".</p>
+                            </div>
+                        </a>
+                        <a class="featured-article article" href="#">
+                            <img src="https://images.unsplash.com/photo-1601980740525-fc689655157f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" />
+                            <div class="article-info">
+                                <h3>Misunderstood building ridiculed for centuries</h3>
+                                <p>Historians wondering when the confusion first began.</p>
+                            </div>
+                        </a>
+                        <a class="featured-article article" href="#">
+                            <img src="https://images.unsplash.com/photo-1572402230267-f3e267c1e5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJpcmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" />
+                            <div class="article-info">
+                                <h3>Endless snow is angering the birds</h3>
+                                <p>One biologist suggests they may be mounting an attack on the clouds.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="did-you-know">
+                    <h2 class="title"><i class="fa-solid fa-question"></i><span class="value">Did you know...</span></h2>
+                    <div class="did-you-know-facts">
+                        <a class="did-you-know-fact f1" href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsi48eqi3zhSJM_OqQHFeWnsaCyQR5ZRnHQ&usqp=CAU" />
+                            <p id="fact1"></p>
+                        </a>
+                        <a class="did-you-know-fact f2" href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsi48eqi3zhSJM_OqQHFeWnsaCyQR5ZRnHQ&usqp=CAU" />
+                            <p id="fact2"></p>
+                        </a>
+                    </div>
+                </div>
+                    <div class="on-this-day articles-section">
+                        <h2 class="title"><i class="fa-solid fa-sun"></i><span class="value">On This Day</span></h2>
+                        <div class="on-this-day-articles articles">
+                            <a class="on-this-day-article article" href="#">
+                                <img src="https://images.unsplash.com/photo-1540458638618-893e9fb35c07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80" />
+                                <div class="article-info">
+                                    <h3>1456</h3>
+                                    <p>Humans determine clouds do not exist, but are instead figments of our collective imagination.</p>
+                                </div>
+                            </a>
+                            <a class="on-this-day-article article" href="#">
+                                <img src="https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxzdHJlYW18ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" />
+                                <div class="article-info">
+                                    <h3>1816</h3>
+                                    <p>Man claims he invented water. Believed by 98% of people.</p>
+                                </div>
+                            </a>
+                            <a class="on-this-day-article article" href="#">
+                                <img src="https://images.unsplash.com/photo-1631562402485-803cae5dd3ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWluZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" />
+                                <div class="article-info">
+                                    <h3>2010</h3>
+                                    <p>Miners discover runite ore. First rune scimmy sold for 25k gp!</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
+    <script src="./script.js"></script>
+
+</body>
+</html>
