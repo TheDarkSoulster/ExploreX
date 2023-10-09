@@ -59,16 +59,16 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #252830; /* Text color */
+    color: #ffffff; /* Text color */
 }
 
 .model-description {
     margin-bottom: 10px;
-    color: #252830; /* Text color */
+    color: #9da2a6; /* Text color */
 }
 
 .view-model-button {
-    background-color: #252830; /* Button background color */
+    background-color: #38c653; /* Button background color */
     color: #ffffff; /* Button text color */
     padding: 10px 20px;
     border: none;
