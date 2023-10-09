@@ -19,3 +19,12 @@ body {
     border: 1px solid #ccc;
     cursor: pointer;
 }
+
+.model-title {
+    font-size: 20px; /* Larger font size for the title */
+    font-weight: bold;
+}
+
+.model-description {
+    color: #888; /* Lighter color for the description */
+}
