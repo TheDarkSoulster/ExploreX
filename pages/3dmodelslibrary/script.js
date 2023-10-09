@@ -11,8 +11,19 @@ function searchModels() {
                 // Create a card for each 3D model
                 const modelCard = document.createElement('div');
                 modelCard.className = 'model-card';
-                modelCard.textContent = model.name;
-                
+
+                // Create title element
+                const title = document.createElement('div');
+                title.className = 'model-title';
+                title.textContent = model.name;
+                modelCard.appendChild(title);
+
+                // Create description element
+                const description = document.createElement('div');
+                description.className = 'model-description';
+                description.textContent = model.description || 'No description available';
+                modelCard.appendChild(description);
+
                 // Embed Sketchfab 3D viewer link on card click
                 modelCard.addEventListener('click', () => {
                     window.open(`https://sketchfab.com/models/${model.uid}/embed`, '_blank');
