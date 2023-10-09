@@ -22,12 +22,6 @@ function searchModels() {
                 const description = document.createElement('div');
                 description.className = 'model-description';
                 description.textContent = model.description ? (model.description.length > 150 ? model.description.slice(0, 150) + '...' : model.description) : 'No description available';
-                
-                // Check if the description needs to fade out
-                if (model.description && model.description.length > 150) {
-                    description.classList.add('fade-out');
-                }
-
                 modelCard.appendChild(description);
 
                 // Add "View Model" button
