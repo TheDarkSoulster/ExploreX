@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/016/113/414/original/question-mark-flying-on-black-background-animation-of-glowing-question-mark-over-black-background-seamless-loop-animation-of-question-mark-icon-floating-on-screen-free-video.jpg') no-repeat center center/cover;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+    color: #4287f5;
+    transition: color 0.3s ease;
+}
+
+.form {
+    margin-bottom: 20px;
+    transition: margin 0.3s ease;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+    color: #4287f5;
+}
+
+select, button {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #4287f5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1c6bf0;
+}
+
+.result {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4287f5;
+    border: 2px solid #4287f5;
+    border-radius: 5px;
+    background-color: #222;
+}
