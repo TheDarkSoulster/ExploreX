@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import { getDatabase, ref, set, remove } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+
 // Initialize Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBSt-89RVn9gzK6aqlyd5sn0234GphPEKY",
@@ -9,8 +12,8 @@ const firebaseConfig = {
     appId: "1:625852014663:web:417933b4705730c7825162"
 };
 
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
 // Function to Add Group
 function addGroup() {
