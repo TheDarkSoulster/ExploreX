@@ -1,22 +1,22 @@
-const apiKey = '25af9fac593d4fff869be23160fb9bb4';
-const searchInput = document.getElementById('searchInput');
 const modelsContainer = document.getElementById('modelsContainer');
-
-searchInput.addEventListener('change', () => {
-    const searchTerm = searchInput.value;
-    fetch(`https://api.sketchfab.com/v3/search?type=models&q=${searchTerm}&token=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-            displayModels(data.results);
-        })
-        .catch(error => console.error(error));
-});
+const searchInput = document.getElementById('searchInput');
 
 const SKETCHFAB_API_URL = 'https://api.sketchfab.com/v3/models';
 
-async function fetchModels() {
+async function fetchFeaturedModels() {
     try {
-        const response = await fetch('https://api.sketchfab.com/v3/models');
+        const response = await fetch(`${SKETCHFAB_API_URL}?featured=true`);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error fetching featured models:', error);
+        return [];
+    }
+}
+
+async function fetchModels(searchTerm) {
+    try {
+        const response = await fetch(`${SKETCHFAB_API_URL}?search=${searchTerm}`);
         const data = await response.json();
         return data.results;
     } catch (error) {
@@ -25,53 +25,72 @@ async function fetchModels() {
     }
 }
 
-async function displayFeaturedModels() {
-    const featuredModels = await fetchFeaturedModels();
-    displayModels(featuredModels);
+async function loadModels() {
+    const models = await fetchFeaturedModels();
+    displayModels(models);
 }
-
-searchInput.addEventListener('input', () => {
-    const searchTerm = searchInput.value.trim();
-    if (searchTerm === '') {
-        displayFeaturedModels();
-    } else {
-        // Perform search logic based on the user's input
-        // You can implement search functionality here if needed
-    }
-});
 
 function displayModels(models) {
     modelsContainer.innerHTML = '';
-
     models.forEach(model => {
         const modelContainer = document.createElement('div');
         modelContainer.className = 'model-container';
 
-        const modelImage = new Image();
-        modelImage.src = model.thumbnails.images[0].url; // Low-resolution thumbnail URL
-        modelImage.alt = model.name;
-
-        modelImage.onload = function () {
-            // Replace the low-resolution image with high-resolution image
-            modelImage.src = model.thumbnails.images[1].url; // High-resolution thumbnail URL
-        };
+        const modelThumbnail = document.createElement('img');
+        modelThumbnail.src = model.thumbnails.images[0].url;
+        modelThumbnail.alt = model.name;
 
         const modelTitle = document.createElement('h3');
         modelTitle.textContent = model.name;
 
-        modelContainer.appendChild(modelImage);
+        const viewModelButton = document.createElement('button');
+        viewModelButton.className = 'view-model-button';
+
+        const eyeIcon = document.createElement('i');
+        eyeIcon.className = 'fas fa-eye';
+
+        viewModelButton.appendChild(eyeIcon);
+        viewModelButton.appendChild(document.createTextNode(' View Model'));
+
+        viewModelButton.addEventListener('click', () => {
+            window.open(`https://sketchfab.com/models/${model.uid}/embed`, '_blank');
+        });
+
+        modelContainer.appendChild(modelThumbnail);
         modelContainer.appendChild(modelTitle);
+        modelContainer.appendChild(viewModelButton);
         modelsContainer.appendChild(modelContainer);
     });
 }
 
-async function loadAndDisplayModels() {
-    const models = await fetchModels();
+loadModels(); // Load featured models by default
+
+searchInput.addEventListener('input', async () => {
+    const searchTerm = searchInput.value.trim();
+    const models = await fetchModels(searchTerm);
     displayModels(models);
+});
+
+function performSearch() {
+    const searchTerm = searchInput.value.trim();
+    if (searchTerm === '') {
+        // Handle empty search term if needed
+        return;
+    }
+
+    fetchModels(searchTerm)
+        .then(models => {
+            displayModels(models);
+        })
+        .catch(error => {
+            console.error('Error performing search:', error);
+        });
 }
 
-loadAndDisplayModels();
+searchButton.addEventListener('click', performSearch);
 
-
-// Initial display of featured models when the page loads
-displayFeaturedModels();
+searchInput.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+        performSearch();
+    }
+});
