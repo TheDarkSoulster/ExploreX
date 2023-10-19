@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+.search-container {
+    background-color: #555;
+}
+
+#searchInput {
+    background-color: #555;
+    color: #fff;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.model-container {
+    background-color: #444;
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.2);
+}
+
+.model-container img {
+    border-radius: 10px 10px 0 0;
+}
+
+.model-container h3 {
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.view-model-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+#searchInput {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#modelsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.model-container {
+    margin: 20px;
+    width: 250px;
+    height: 240px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+
+.model-container img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.model-container h3 {
+    margin: 10px;
+}
+
+.view-model-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    width: 230px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-model-button:hover {
+    background-color: #0056b3;
+}
+
+.search-container {
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #555;
+    width: 100%; /* Set the width to 100% to span across the entire screen */
+    height: 40px;
+}
+
+#searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    border-radius: 25px 0 0 25px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: #555;
+    color: #fff;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.search-button i {
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Dark background color for the header */
+}
+
+.logo-container img {
+    width: 50px; /* Set the width of your logo */
+    height: auto;
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+/* Style the clear button (cross button) inside the search input */
+/* Webkit browsers */
+input[type="search"]::-webkit-search-clear-button {
+    appearance: none;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #fff; /* Set the background color to solid white */
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Mozilla Firefox */
+input[type="search"]::-moz-search-clear-button {
+    appearance: none;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #fff; /* Set the background color to solid white */
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Edge and IE */
+input[type="search"]::-ms-clear {
+    display: none;
+}

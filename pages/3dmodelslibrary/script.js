@@ -1,44 +1,78 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Fetch most viewed 3D models from Sketchfab API
-    fetch('https://api.sketchfab.com/v3/models?sort_by=-viewCount&type=models')
+const apiKey = '25af9fac593d4fff869be23160fb9bb4';
+const searchInput = document.getElementById('searchInput');
+const modelsContainer = document.getElementById('modelsContainer');
+
+searchInput.addEventListener('change', () => {
+    const searchTerm = searchInput.value;
+    fetch(`https://api.sketchfab.com/v3/search?type=models&q=${searchTerm}&token=${apiKey}`)
         .then(response => response.json())
         .then(data => {
-            const modelList = document.getElementById('modelList');
-
-            // Create cards for most viewed models
-            data.results.forEach(model => {
-                const modelCard = createModelCard(model);
-                modelList.appendChild(modelCard);
-            });
+            displayModels(data.results);
         })
         .catch(error => console.error(error));
+});
 
-    // Function to create a model card
-    function createModelCard(model) {
-        const modelCard = document.createElement('div');
-        modelCard.className = 'model-card';
+const SKETCHFAB_API_URL = 'https://api.sketchfab.com/v3/models';
 
-        // Create title element
-        const title = document.createElement('div');
-        title.className = 'model-title';
-        title.textContent = model.name;
-        modelCard.appendChild(title);
+async function fetchFeaturedModels() {
+    try {
+        const response = await fetch(`${SKETCHFAB_API_URL}?featured=true`);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error fetching featured models:', error);
+        return [];
+    }
+}
 
-        // Create description element (limited to 150 characters with "..." if exceeded)
-        const description = document.createElement('div');
-        description.className = 'model-description';
-        description.textContent = model.description ? (model.description.length > 150 ? model.description.slice(0, 150) + '...' : model.description) : 'No description available';
-        modelCard.appendChild(description);
+async function displayFeaturedModels() {
+    const featuredModels = await fetchFeaturedModels();
+    displayModels(featuredModels);
+}
 
-        // Add "View Model" button
+searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.trim();
+    if (searchTerm === '') {
+        displayFeaturedModels();
+    } else {
+        // Perform search logic based on the user's input
+        // You can implement search functionality here if needed
+    }
+});
+
+function displayModels(models) {
+    modelsContainer.innerHTML = '';
+    models.forEach(model => {
+        const modelContainer = document.createElement('div');
+        modelContainer.className = 'model-container';
+
+        const modelThumbnail = document.createElement('img');
+        modelThumbnail.src = model.thumbnails.images[0].url;
+        modelThumbnail.alt = model.name;
+
+        const modelTitle = document.createElement('h3');
+        modelTitle.textContent = model.name;
+
         const viewModelButton = document.createElement('button');
-        viewModelButton.textContent = 'View Model';
         viewModelButton.className = 'view-model-button';
+
+        const eyeIcon = document.createElement('i');
+        eyeIcon.className = 'fas fa-eye';
+
+        viewModelButton.appendChild(eyeIcon);
+        viewModelButton.appendChild(document.createTextNode(' View Model'));
+
         viewModelButton.addEventListener('click', () => {
             window.open(`https://sketchfab.com/models/${model.uid}/embed`, '_blank');
         });
-        modelCard.appendChild(viewModelButton);
 
-        return modelCard;
-    }
-});
+        modelContainer.appendChild(modelThumbnail);
+        modelContainer.appendChild(modelTitle);
+        modelContainer.appendChild(viewModelButton);
+        modelsContainer.appendChild(modelContainer);
+    });
+}
+
+
+// Initial display of featured models when the page loads
+displayFeaturedModels();
