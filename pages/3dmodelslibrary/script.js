@@ -14,13 +14,13 @@ searchInput.addEventListener('change', () => {
 
 const SKETCHFAB_API_URL = 'https://api.sketchfab.com/v3/models';
 
-async function fetchFeaturedModels() {
+async function fetchModels() {
     try {
-        const response = await fetch(`${SKETCHFAB_API_URL}?featured=true`);
+        const response = await fetch('https://api.sketchfab.com/v3/models');
         const data = await response.json();
         return data.results;
     } catch (error) {
-        console.error('Error fetching featured models:', error);
+        console.error('Error fetching models:', error);
         return [];
     }
 }
@@ -42,36 +42,35 @@ searchInput.addEventListener('input', () => {
 
 function displayModels(models) {
     modelsContainer.innerHTML = '';
+
     models.forEach(model => {
         const modelContainer = document.createElement('div');
         modelContainer.className = 'model-container';
 
-        const modelThumbnail = document.createElement('img');
-        modelThumbnail.src = model.thumbnails.images[0].url;
-        modelThumbnail.alt = model.name;
+        const modelImage = new Image();
+        modelImage.src = model.thumbnails.images[0].url; // Low-resolution thumbnail URL
+        modelImage.alt = model.name;
+
+        modelImage.onload = function () {
+            // Replace the low-resolution image with high-resolution image
+            modelImage.src = model.thumbnails.images[1].url; // High-resolution thumbnail URL
+        };
 
         const modelTitle = document.createElement('h3');
         modelTitle.textContent = model.name;
 
-        const viewModelButton = document.createElement('button');
-        viewModelButton.className = 'view-model-button';
-
-        const eyeIcon = document.createElement('i');
-        eyeIcon.className = 'fas fa-eye';
-
-        viewModelButton.appendChild(eyeIcon);
-        viewModelButton.appendChild(document.createTextNode(' View Model'));
-
-        viewModelButton.addEventListener('click', () => {
-            window.open(`https://sketchfab.com/models/${model.uid}/embed`, '_blank');
-        });
-
-        modelContainer.appendChild(modelThumbnail);
+        modelContainer.appendChild(modelImage);
         modelContainer.appendChild(modelTitle);
-        modelContainer.appendChild(viewModelButton);
         modelsContainer.appendChild(modelContainer);
     });
 }
+
+async function loadAndDisplayModels() {
+    const models = await fetchModels();
+    displayModels(models);
+}
+
+loadAndDisplayModels();
 
 
 // Initial display of featured models when the page loads
