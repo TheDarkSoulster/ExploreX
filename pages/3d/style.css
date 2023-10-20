@@ -222,10 +222,8 @@ input[type="search"]::-ms-clear {
     border-radius: 10px;
     text-align: center;
     position: relative;
-    height: 100%;
-    width: 100%;
-    max-width: 600px; 
-    max-height: 80vh;
+    height: 90%;
+    width: 90%; 
     overflow-y: auto;
 }
 
