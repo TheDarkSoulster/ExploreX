@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>3D Models - ExploreX</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="header">
+    <div class="logo-container">
+        <img src="./ToolsX.png" alt="Logo">
+    </div>
+    <div class="search-container">
+        <input type="search" id="searchInput" placeholder="Enter your search...">
+        <button id="searchButton" class="search-button">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+  <button data-tf-popup="JvtO43Lj" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=Report a 3D Model" data-tf-transitive-search-params data-tf-medium="snippet" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#FF0000;color:#fff;font-size:16px;border-radius:20px;padding:0 26px;font-weight:bold;height:40px;cursor:pointer;line-height:40px;text-align:center;margin:0;text-decoration:none;"><i class="fas fa-flag"></i>   Report</button><script src="//embed.typeform.com/next/embed.js"></script>
+</div>
+
+
+<div id="modelsContainer">
+</div>
+
+<div class="popup" id="modelPopup">
+    <div class="popup-content">
+   
+    <a href="https://explorex-webapp.vercel.app/">      
+ <div class="watermark-container">
+<img src="https://cdn.dribbble.com/users/1139587/screenshots/9669226/media/ecec1c9a5d3df3cae5f32d5087622ead.jpg" alt="Watermark" draggable="false">
+</div>
+</a>
+
+        <iframe id="modelIframe" frameborder="0"></iframe>
+        <button class="close-button" onclick="closePopup()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+<button id="backToTopBtn">
+    <i class="fas fa-caret-up"></i>
+</button>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2023 ExploreX. All rights reserved.</p>
+    </div>
+</footer>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
