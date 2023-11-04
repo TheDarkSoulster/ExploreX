@@ -6,7 +6,7 @@ const modelPopup = document.getElementById('modelPopup');
 const modelIframe = document.getElementById('modelIframe');
 const closeButton = document.querySelector('.close-button');
 const backToTopButton = document.getElementById("backToTopBtn");
-const blacklist = ['Blacklisted Model 1', 'Blacklisted Model 2'];
+const blacklist = ['Hazmat RIGGED', 'Concept Study - Model', 'Creeper Girl', 'Minecraftgirl creeper With Outline(anime style)', 'Australopithecus sediba (repro) [reprocessed]', 'Boo! ψ( ` ∇ ´ )ψ', 'Princess Boo', 'Dragon Girl', 'Just a girl', 'Steampunk girl', 'ETAMAs Girl', 'Pika_Girl', 'Nature Girl'];
 
 function searchModels(query) {
     fetch(`https://api.sketchfab.com/v3/search?type=models&q=${query}&token=${apiKey}`)
