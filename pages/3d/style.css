@@ -1,7 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    color: #fff
+    font-family: 'Roboto', sans-serif;
+    background-color: #221534;
+    color: #fff;
     user-select: none;
 }
 
@@ -11,7 +11,7 @@ body {
     border-radius: 25px;
     overflow: hidden;
     margin-right: 20px;
-    background-color: #555;
+    background-color: #4e4161;
     height: 40px;
 }
 
@@ -24,13 +24,13 @@ body {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
-    background-color: #555;
+    background-color: #d1bfe6;
     color: #fff;
 }
 
 .search-button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #d7cbe5;
+    color: #372a49;
     border: none;
     border-radius: 0 25px 25px 0;
     cursor: pointer;
@@ -38,18 +38,18 @@ body {
 }
 
 .search-button i {
-    color: #fff;
+    color: #372a49;
 }
 
 .model-container {
-    background-color: #444;
-    box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.2);
-      user-select: none;
+    background-color: #4e4161;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.2);
+    user-select: none;
 }
 
 .model-container img {
     border-radius: 10px 10px 0 0;
-      user-select: none;
+    user-select: none;
 }
 
 .model-container h3 {
@@ -57,24 +57,23 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-      user-select: none;
+    user-select: none;
 }
 
 .view-model-button {
     background-color: #007bff;
     color: #fff;
-      user-select: none;
+    user-select: none;
 }
-
 
 .card {
     border-radius: 15px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
     padding: 20px;
     width: 80%;
     margin: 0 auto;
     background-color: #ffffff;
-      user-select: none;
+    user-select: none;
 }
 
 #searchInput {
@@ -116,8 +115,8 @@ body {
 }
 
 .view-model-button {
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: #d1bfe6;
+    color: #372a49;
     border: none;
     width: 230px;
     padding: 10px 20px;
@@ -129,7 +128,7 @@ body {
 }
 
 .view-model-button:hover {
-    background-color: #0056b3;
+    background-color: #dbd4e5;
 }
 
 .search-container {
@@ -172,7 +171,7 @@ body {
     display: flex;
     align-items: center;
     padding: 5px;
-    background-color: #333;
+    background-color: #221534;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -204,7 +203,6 @@ input[type="search"]::-moz-search-clear-button {
     border-radius: 50%;
     position: relative;
 }
-
 
 input[type="search"]::-ms-clear {
     display: none;
@@ -258,26 +256,6 @@ input[type="search"]::-ms-clear {
 
 .popup-content::-webkit-scrollbar-thumb {
     background-color: transparent;
-}
-
-#backToTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 50%; /* Make the button circular */
-    width: 50px; /* Set a fixed width and height for the circular button */
-    height: 50px;
-    cursor: pointer;
-    z-index: 998;
-    transition: background-color 0.3s ease; /* Add a transition effect to button hover */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
 }
 
 #backToTopBtn:hover {
