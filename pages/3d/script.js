@@ -6,7 +6,19 @@ const modelPopup = document.getElementById('modelPopup');
 const modelIframe = document.getElementById('modelIframe');
 const closeButton = document.querySelector('.close-button');
 const backToTopButton = document.getElementById("backToTopBtn");
-const blacklist = ['Hazmat RIGGED', 'Concept Study - Model', 'Creeper Girl', 'Minecraftgirl creeper With Outline(anime style)', 'Australopithecus sediba (repro) [reprocessed]', 'Boo! ψ( ` ∇ ´ )ψ', 'Princess Boo', 'Dragon Girl', 'Just a girl', 'Steampunk girl', 'ETAMAs Girl', 'Pika_Girl', 'Nature Girl'];
+const blacklist = ['Hazmat RIGGED', 'Concept Study - Model', 'Creeper Girl', 'Minecraftgirl creeper With Outline(anime style)', 'Australopithecus sediba (repro) [reprocessed]', 'Boo! ψ( ` ∇ ´ )ψ', 'Princess Boo', 'Dragon Girl', 'Just a girl', 'Steampunk girl', 'ETAMA\'s Girl', 'Pika_Girl', 'Nature Girl'];
+
+// Extract search query from URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const searchQuery = urlParams.get('query');
+
+// Use the searchQuery to perform a search (you can call your search function here)
+if (searchQuery) {
+    searchModels(searchQuery);
+} else {
+    // If no search query is provided, fetch and display featured models
+    fetchFeaturedModels();
+}
 
 function searchModels(query) {
     fetch(`https://api.sketchfab.com/v3/search?type=models&q=${query}&token=${apiKey}`)
@@ -96,7 +108,5 @@ function fetchFeaturedModels() {
         })
         .catch(error => console.error(error));
 }
-
-fetchFeaturedModels();
 
 closeButton.addEventListener('click', closePopup);
